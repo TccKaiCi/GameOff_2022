@@ -7,5 +7,5 @@ Try to know what Cli-ché mean and find some idea from that.
 ## Day 03
 Create project and define what should i do
 
-## Day 04 - 06 
-Suspend
+## Day 04 - 07
+Lmao, im master of postpone
