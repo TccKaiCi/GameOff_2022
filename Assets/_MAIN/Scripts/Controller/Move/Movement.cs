@@ -19,12 +19,16 @@ namespace KaiCi
 
         public void Move(bool isMoveRight)
         {
-            var moveDirection = isMoveRight ? moveSpeed : -1.0f * moveSpeed;
+            // var moveDirection = isMoveRight ? moveSpeed : -1.0f * moveSpeed;
+            var moveDirection = isMoveRight ? Vector2.right : -1.0f * Vector2.left;
 
-            var targetVelocity = new Vector2(moveDirection, _rigidbody2D.velocity.y);
-            // And then smoothing it out and applying it to the character
-            var m_Velocity = Vector2.zero;
-            _rigidbody2D.velocity = Vector2.SmoothDamp(_rigidbody2D.velocity, targetVelocity, ref m_Velocity, updateTime);
+            // var targetVelocity = new Vector2(moveDirection, _rigidbody2D.velocity.y);
+            // // And then smoothing it out and applying it to the character
+            // var m_Velocity = Vector2.zero;
+            // _rigidbody2D.velocity = Vector2.SmoothDamp(_rigidbody2D.velocity, targetVelocity, ref m_Velocity, updateTime);
+
+            // _rigidbody2D.velocity = Vector2.right * moveDirection;
+            _rigidbody2D.velocity = moveDirection * moveSpeed;
         }
     }
 }

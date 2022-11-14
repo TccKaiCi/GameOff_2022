@@ -44,7 +44,7 @@ namespace KaiCi
             {
                 var wp = wayPoints[_currentWaypointIndex];
 
-                if (Vector2.Distance(transform.position, wp.position) < 2f)
+                if (transform.position.x - wp.position.x < 0.2f)
                 {
                     Debug.Log("Change way point");
 
