@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyBox;
 
-public class HUDSystem : MonoBehaviour
+namespace KaiCi
 {
-    // Start is called before the first frame update
-    void Start()
+    public class HUDSystem : Singleton<HUDSystem>
     {
-        
-    }
+        [MustBeAssigned] public HealthBar healthBar;
+        [MustBeAssigned] public GameObject gameWinPanel;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void ShowGameWinPanel()
+        {
+            gameWinPanel.SetActive(true);
+        }
+
     }
 }
