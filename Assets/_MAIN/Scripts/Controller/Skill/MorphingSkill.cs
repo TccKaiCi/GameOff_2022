@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TarodevController;
 using UnityEngine;
 
 namespace KaiCi
@@ -29,12 +28,10 @@ namespace KaiCi
             if (_isUsingSkill)
             {
                 //todo go out of skill
-                PlayerController.instance.PlayerReMoving();
             }
             else
             {
                 //todo play hide
-                PlayerController.instance.PlayerStopMoving();
                 SpawnEffectDisappear();
             }
 

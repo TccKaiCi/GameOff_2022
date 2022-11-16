@@ -6,30 +6,42 @@ using System;
 
 namespace KaiCi
 {
+    [RequireComponent(typeof(Movement))]
     public class PlayInput : MonoBehaviour
     {
-        [MustBeAssigned][SerializeField] private Movement movement;
-
-        private void Reset()
-        {
-            movement = GetComponent<Movement>();
-        }
+        [SerializeField] private Movement _movement;
 
         private void Update()
         {
-            GatherInput();
+            GetherInput();
         }
 
-        private void GatherInput()
+        private void GetherInput()
         {
-            if (Input.GetKeyDown(Memory.moveLeft))
-            {
-                movement.Move(false);
-            }
-            if (Input.GetKeyDown(Memory.moveLeft))
-            {
-                movement.Move(true);
-            }
+            // _movement.Move(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
+            // if (Input.GetKeyDown(Memory.moveKeyCode.moveUp))
+            // {
+            //     _movement.MoveUp();
+            // }
+            // else
+            // if (Input.GetKeyDown(Memory.moveKeyCode.moveDown))
+            // {
+            //     _movement.MoveDown();
+            // }
+            // else
+            // if (Input.GetKeyDown(Memory.moveKeyCode.moveLeft))
+            // {
+            //     _movement.MoveLeft();
+            // }
+            // else
+            // if (Input.GetKeyDown(Memory.moveKeyCode.moveRight))
+            // {
+            //     _movement.MoveRight();
+            // }
+            // else
+            // {
+            //     _movement.Freeze();
+            // }
         }
     }
 }

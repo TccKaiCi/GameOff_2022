@@ -48,6 +48,12 @@ namespace KaiCi
             _listHeartBeDisplayed[_numberHearth].SetActive(false);
         }
 
-
+        private void CheckHearth()
+        {
+            if (_numberHearth == 1)
+            {
+                HUDSystem.Instance.ShowGameWinPanel();
+            }
+        }
     }
 }

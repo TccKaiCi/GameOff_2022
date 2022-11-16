@@ -4,50 +4,21 @@ using UnityEngine;
 
 namespace KaiCi
 {
-
-    public class HideObject : InteractWithObject
+    public class HideObject : MonoBehaviour
     {
-        private bool _isHide;
-
-        private void Start()
-        {
-            base.Start();
-            _isHide = false;
-        }
-
-        protected override void PLayInteraction()
-        {
-            if (_isHide)
-            {
-                TarodevController.PlayerController.instance.active = false;
-                TarodevController.PlayerController.instance.transform.SetDisplayChildObject(0, 0, false);
-                Debug.Log("Player Hide");
-            }
-            else
-            {
-                TarodevController.PlayerController.instance.active = true;
-                TarodevController.PlayerController.instance.transform.SetDisplayChildObject(0, 0, true);
-                Debug.Log("Player unHide");
-            }
-
-            _isHide = !_isHide;
-        }
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag(Memory.playerTag))
             {
-                isIntractable = true;
-                _isHide = true;
+                other.gameObject.tag = Memory.playerHidingTag;
             }
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.CompareTag(Memory.playerTag))
+            if (other.CompareTag(Memory.playerHidingTag))
             {
-                isIntractable = false;
-                _isHide = false;
+                other.gameObject.tag = Memory.playerTag;
             }
         }
     }
