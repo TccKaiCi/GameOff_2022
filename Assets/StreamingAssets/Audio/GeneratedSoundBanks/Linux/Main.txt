@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1534733947	Play_Pill			\Default Work Unit\Play_Pill	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	500681476	Pill	N:\Gamejam\Game Off 2022\Repository\GameOff_2022\GameOff_2022_WwiseProject\.cache\Linux\SFX\Pill_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pill		264696
+
