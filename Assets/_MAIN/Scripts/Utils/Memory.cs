@@ -9,8 +9,8 @@ namespace KaiCi
         public static KeyCode interactKey = KeyCode.E;
 
         public static MoveKeyCode moveKeyCode = new MoveKeyCode();
+        public static SkillKeyCode skillKeyCode = new SkillKeyCode();
 
-        public static KeyCode morphingSkill = KeyCode.Q;
         public static KeyCode jump = KeyCode.Space;
 
         public static string playerTag = "Player";
@@ -24,6 +24,10 @@ namespace KaiCi
         public KeyCode moveRight = KeyCode.D;
         public KeyCode moveUp = KeyCode.W;
         public KeyCode moveDown = KeyCode.S;
+    }
 
+    public class SkillKeyCode
+    {
+        public KeyCode[] slots = { KeyCode.Q, KeyCode.E, KeyCode.R };
     }
 }

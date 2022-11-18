@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace KaiCi
 {
-    public class MorphingSkill : MonoBehaviour
+    public class MorphingSkill : Skill
     {
         [SerializeField] private bool _isUsingSkill;
         [SerializeField] private GameObject[] listPrefab;
@@ -15,12 +15,9 @@ namespace KaiCi
             _isUsingSkill = false;
         }
 
-        private void Update()
+        public override void Use()
         {
-            if (Input.GetKeyDown(Memory.morphingSkill))
-            {
-                DoMorphing();
-            }
+            Debug.Log("Use morphing");
         }
 
         private void DoMorphing()
@@ -37,6 +34,7 @@ namespace KaiCi
 
             _isUsingSkill = !_isUsingSkill;
         }
+
         private void SpawnEffectDisappear()
         {
             var effect = Instantiate(listPrefab[UnityEngine.Random.Range(0, listPrefab.Length)], transform.position, Quaternion.identity);
