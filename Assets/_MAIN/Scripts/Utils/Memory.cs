@@ -16,6 +16,10 @@ namespace KaiCi
         public static string playerTag = "Player";
         public static string playerHidingTag = "PlayerHiding";
 
+        public static string AnimationWalkName = "Walk";
+        public static string AnimationIdleName = "Idle";
+        public static string AnimationMorphingName = "Morphing";
+        public static string AnimationExitMorphingName = "ExitMorphing";
     }
 
     public class MoveKeyCode
@@ -28,6 +32,6 @@ namespace KaiCi
 
     public class SkillKeyCode
     {
-        public KeyCode[] slots = { KeyCode.Q, KeyCode.E, KeyCode.R };
+        public KeyCode[] slots = { KeyCode.Z, KeyCode.X, KeyCode.C };
     }
 }

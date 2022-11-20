@@ -11,7 +11,7 @@ namespace KaiCi
             if (other.CompareTag(Memory.playerTag))
             {
                 // HUDSystem.Instance.healthBar.DeleteOneHearth();
-                TarodevController.PlayerController.instance.transform.position = new Vector3(-39.9199982f, 6.44999981f, 0f);
+                PlayerController.instance.transform.position = new Vector3(-39.9199982f, 6.44999981f, 0f);
             }
         }
     }

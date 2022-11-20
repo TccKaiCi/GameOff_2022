@@ -18,6 +18,11 @@ namespace KaiCi
             Debug.Log("Use dash");
             _isDashing = true;
         }
+        private void Update()
+        {
+            moveInput.x = Input.GetAxisRaw("Horizontal");
+            moveInput.y = Input.GetAxisRaw("Vertical");
+        }
 
         private void FixedUpdate()
         {
@@ -26,19 +31,20 @@ namespace KaiCi
 
         private void HandleDash()
         {
-            moveInput.x = speed * Input.GetAxisRaw("Horizontal") + transform.position.x;
-            moveInput.y = speed * Input.GetAxisRaw("Vertical") + transform.position.y;
+            Vector2 newPosition = transform.position;
 
-            // rigidbody2D.velocity = (moveInput * speed);
-            _isDashing = false;
+            if (moveInput.x != 0)
+            {
+                newPosition.x += moveInput.x * speed;
+            }
 
-            transform.DOMove(moveInput, runTime);
+            if (moveInput.y != 0)
+            {
+                newPosition.y += moveInput.y * speed;
+            }
+
+
+            transform.DOMove(newPosition, runTime).OnComplete(() => _isDashing = false);
         }
-
-        // private bool CanMove(Vector2 dir, float distance)
-        // {
-        //     return Physics2D.Raycast(transform.position, dir, distance).collider == null;
-        // }
-
     }
 }

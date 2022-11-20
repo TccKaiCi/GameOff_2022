@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8710571614512101696}
   - component: {fileID: 8710571614512101697}
   - component: {fileID: 8710571614512101702}
+  - component: {fileID: -3142467601085732454}
   m_Layer: 0
   m_Name: disapear effect
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8710571614512101703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.11, y: 1.93, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,3 +106,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &-3142467601085732454
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8710571614512101703}
+  m_Enabled: 1
+  m_SortingLayerID: -1431832439
+  m_SortingLayer: 3
+  m_SortingOrder: 1
