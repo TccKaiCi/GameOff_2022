@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 8510ae41d73bc6449bad90751cd99771
     GuidInternal: 
-    m_lastTime: -8585329500637273585
+    m_lastTime: -8585329488159545331
     List:
     - name: Main
       guid: 079247a6a38ac14aa5ebe8725ce54775
@@ -94,8 +94,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 7c7548430caf134fae57b96223a7a541
     GuidInternal: 
-    m_lastTime: -8585329501115591141
+    m_lastTime: -8585329488159475357
     List:
+    - name: Play_Bolt
+      guid: 01c14ea87ae3a246960b603e64fa7ac1
+      id: 1340741931
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7c7548430caf134fae57b96223a7a541
+      - ElementName: Play_Bolt
+        ObjectType: 3
+        guid: 01c14ea87ae3a246960b603e64fa7ac1
+      Path: Events\Default Work Unit\Play_Bolt
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Pill
       guid: 861005ed8136d545953693b868ca59b6
       id: 1534733947
