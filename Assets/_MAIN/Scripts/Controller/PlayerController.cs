@@ -202,7 +202,7 @@ namespace KaiCi
                 TurnOnOneAnimation(Memory.AnimationIdleName);
             }
 
-            if (Input.X >= 0) LookRight(); else LookLeft();
+            if (Input.X > 0) LookRight(); else if (Input.X < 0) LookLeft();
 
             if (_currentHorizontalSpeed > 0 && _colRight || _currentHorizontalSpeed < 0 && _colLeft)
             {
