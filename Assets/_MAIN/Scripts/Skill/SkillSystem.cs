@@ -7,7 +7,7 @@ namespace KaiCi
 {
     public class SkillSystem : MonoBehaviour
     {
-        public Skill[] listSkill = new Skill[3];
+        public Skill[] listSkill;
 
         private void Update()
         {

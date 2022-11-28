@@ -32,6 +32,6 @@ namespace KaiCi
 
     public class SkillKeyCode
     {
-        public KeyCode[] slots = { KeyCode.Z, KeyCode.X, KeyCode.C };
+        public KeyCode[] slots = { KeyCode.Mouse0, KeyCode.Mouse1 };
     }
 }
