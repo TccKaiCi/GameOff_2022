@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
+using UnityEngine.SceneManagement;
 
 namespace KaiCi
 {
@@ -35,7 +36,9 @@ namespace KaiCi
 
             if (isPlayerInRange)
             {
-                PlayerController.instance.transform.position = new Vector3(-39.9199982f, 6.44999981f, 0f);
+                // PlayerController.instance.transform.position = Spawn.instance.transform.position;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                DeactiveKey.instance.Reset();
             }
 
 

@@ -166,7 +166,7 @@ SortingGroup:
   m_GameObject: {fileID: 7296479}
   m_Enabled: 1
   m_SortingLayerID: -701628791
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!212 &7296482
 SpriteRenderer:
@@ -10752,7 +10752,7 @@ SortingGroup:
   m_GameObject: {fileID: 412576077}
   m_Enabled: 1
   m_SortingLayerID: -701628791
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!212 &412576080
 SpriteRenderer:
@@ -11954,6 +11954,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ddddf6af2400d43b6ee1779077f9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alert: {fileID: 0}
+  timeForAlert: 0
+  isPlayerInRange: 0
 --- !u!1 &732263113
 GameObject:
   m_ObjectHideFlags: 0
@@ -11982,7 +11985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732263113}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.322784, y: 11.785498, z: -9.9872055}
+  m_LocalPosition: {x: -35.320946, y: 11.785418, z: -9.9872055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12161,7 +12164,7 @@ SortingGroup:
   m_GameObject: {fileID: 754109023}
   m_Enabled: 1
   m_SortingLayerID: -701628791
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!4 &754109026
 Transform:
@@ -12354,7 +12357,7 @@ SortingGroup:
   m_GameObject: {fileID: 840833983}
   m_Enabled: 1
   m_SortingLayerID: -701628791
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!4 &840833986
 Transform:
@@ -22688,7 +22691,7 @@ SortingGroup:
   m_GameObject: {fileID: 1006117600}
   m_Enabled: 1
   m_SortingLayerID: -701628791
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!212 &1006117603
 SpriteRenderer:
@@ -23266,6 +23269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ddddf6af2400d43b6ee1779077f9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alert: {fileID: 0}
+  timeForAlert: 0
+  isPlayerInRange: 0
 --- !u!114 &1207803962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23611,7 +23617,7 @@ SortingGroup:
   m_GameObject: {fileID: 1324924498}
   m_Enabled: 1
   m_SortingLayerID: -701628791
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!212 &1324924501
 SpriteRenderer:
@@ -24017,6 +24023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ddddf6af2400d43b6ee1779077f9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alert: {fileID: 0}
+  timeForAlert: 0
+  isPlayerInRange: 0
 --- !u!114 &1403020621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25512,7 +25521,7 @@ SortingGroup:
   m_GameObject: {fileID: 2016090331}
   m_Enabled: 1
   m_SortingLayerID: -1431832439
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
 --- !u!114 &2016090333
 MonoBehaviour:
@@ -25726,6 +25735,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ddddf6af2400d43b6ee1779077f9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alert: {fileID: 0}
+  timeForAlert: 0
+  isPlayerInRange: 0
 --- !u!114 &2016363468
 MonoBehaviour:
   m_ObjectHideFlags: 0
