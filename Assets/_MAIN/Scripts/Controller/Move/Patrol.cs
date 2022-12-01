@@ -35,6 +35,11 @@ namespace KaiCi
         private float _waitCounter = 0f;
         private bool _waiting = false;
 
+        private void Awake()
+        {
+            Init();
+        }
+
         private void Start()
         {
             flashlight = transform.GetChild(0).gameObject;

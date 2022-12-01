@@ -22,8 +22,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - WTF
+  - WTFBound
   - 
   - 
   - 
@@ -49,9 +49,12 @@ TagManager:
   - name: Ground
     uniqueID: 1198294033
     locked: 0
-  - name: Player
-    uniqueID: 2863134857
-    locked: 0
   - name: Object
     uniqueID: 3593338505
+    locked: 0
+  - name: Obstacle
+    uniqueID: 2096214873
+    locked: 0
+  - name: Player
+    uniqueID: 2863134857
     locked: 0

@@ -10,6 +10,8 @@ namespace KaiCi
         [SerializeField] private bool _isUsingSkill;
         [SerializeField] private GameObject[] listPrefab;
 
+        public GameObject[] childs;
+
         private bool _isInCoolDown;
 
         private void Start()
@@ -34,6 +36,12 @@ namespace KaiCi
                 _isInCoolDown = true;
                 //todo go out of skill
                 gameObject.tag = Memory.playerTag;
+
+                foreach (var a in childs)
+                {
+                    a.tag = Memory.playerTag;
+                }
+
                 ReturnToNormal();
 
                 yield return new WaitForSeconds(3.0f);
@@ -44,6 +52,12 @@ namespace KaiCi
             {
                 //todo play hide
                 gameObject.tag = Memory.playerHidingTag;
+
+                foreach (var a in childs)
+                {
+                    a.tag = Memory.playerHidingTag;
+                }
+
                 SpawnEffectDisappear();
                 _isUsingSkill = !_isUsingSkill;
             }
