@@ -4,7 +4,7 @@ using System.Linq;
 using KaiCi;
 using UnityEngine;
 
-namespace TarodevController
+namespace KaiCi
 {
 
     /// <summary>
@@ -26,20 +26,10 @@ namespace TarodevController
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
 
-        public void PlayerStopMoving()
-        {
-            SetMovingStatus(false);
-        }
-
-        public void PlayerReMoving()
-        {
-            SetMovingStatus(true);
-        }
-
         public void SetMovingStatus(bool status)
         {
             active = status;
-            transform.SetDisplayChildObject(0, 0, status);
+            // transform.SetDisplayChildObject(0, 0, status);
         }
 
         // This is horrible, but for some reason colliders are not fully established when update starts...
@@ -136,6 +126,34 @@ namespace TarodevController
             }
         }
 
+        private void OnDrawGizmos()
+        {
+            // Bounds
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireCube(transform.position + _characterBounds.center, _characterBounds.size);
+
+            // Rays
+            if (!Application.isPlaying)
+            {
+                CalculateRayRanged();
+                Gizmos.color = Color.blue;
+                foreach (var range in new List<RayRange> { _raysUp, _raysRight, _raysDown, _raysLeft })
+                {
+                    foreach (var point in EvaluateRayPositions(range))
+                    {
+                        Gizmos.DrawRay(point, range.Dir * _detectionRayLength);
+                    }
+                }
+            }
+
+            if (!Application.isPlaying) return;
+
+            // Draw the future position. Handy for visualizing gravity
+            Gizmos.color = Color.red;
+            var move = new Vector3(_currentHorizontalSpeed, _currentVerticalSpeed) * Time.deltaTime;
+            Gizmos.DrawWireCube(transform.position + move, _characterBounds.size);
+        }
+
         #endregion
 
 
@@ -144,7 +162,7 @@ namespace TarodevController
         [Header("WALKING")][SerializeField] private float _acceleration = 90;
         [SerializeField] private float _moveClamp = 13;
         [SerializeField] private float _deAcceleration = 60f;
-
+        [SerializeField] public Animator animator;
         private void CalculateWalk()
         {
             if (Input.X != 0)
@@ -175,6 +193,16 @@ namespace TarodevController
                 _currentVerticalSpeed = Mathf.MoveTowards(_currentVerticalSpeed, 0, _deAcceleration * Time.deltaTime);
             }
 
+            if (Input.Y != 0 || Input.X != 0)
+            {
+                TurnOnOneAnimation(Memory.AnimationWalkName);
+            }
+            else
+            {
+                TurnOnOneAnimation(Memory.AnimationIdleName);
+            }
+
+            if (Input.X > 0) LookRight(); else if (Input.X < 0) LookLeft();
 
             if (_currentHorizontalSpeed > 0 && _colRight || _currentHorizontalSpeed < 0 && _colLeft)
             {
@@ -184,6 +212,22 @@ namespace TarodevController
         }
 
         #endregion
+
+        #region Animation
+        public void TurnOnOneAnimation(string animationName)
+        {
+            TurnOffAllAnimation();
+            animator.SetBool(animationName, true);
+        }
+        public void TurnOffAllAnimation()
+        {
+            animator.SetBool(Memory.AnimationExitMorphingName, false);
+            animator.SetBool(Memory.AnimationIdleName, false);
+            animator.SetBool(Memory.AnimationMorphingName, false);
+            animator.SetBool(Memory.AnimationWalkName, false);
+        }
+        #endregion
+
 
         #region Move
 
@@ -235,6 +279,9 @@ namespace TarodevController
         }
 
         #endregion
+
+        private void LookRight() => transform.rotation = Quaternion.Euler(0, 0, 0);
+        private void LookLeft() => transform.rotation = Quaternion.Euler(0, 180, 0);
 
         public struct FrameInput
         {
